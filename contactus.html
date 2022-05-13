@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <!-- <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"];
+            var email = document.forms["myForm"]["email"];
+            var message = document.forms["myForm"]["message"];
+
+            if (name.value == "") {
+                document.getElementById('errorname').innerHTML = "Please enter a valid name";
+                name.focus();
+                return false;
+            } else {
+                document.getElementById('errorname').innerHTML = "";
+            }
+
+            if (email.value == "") {
+                document.getElementById('erroremail').innerHTML = "Please enter a valid email address";
+                email.focus();
+                return false;
+            } else {
+                document.getElementById('erroremail').innerHTML = "";
+            }
+
+            if (email.value.indexOf("@", 0) < 0) {
+                document.getElementById('erroremail').innerHTML = "Please enter a valid email address";
+                email.focus();
+                return false;
+            }
+
+            if (email.value.indexOf(".", 0) < 0) {
+                document.getElementById('erroremail').innerHTML = "Please enter a valid email address";
+                email.focus();
+                return false;
+            }
+
+            if (message.value == "") {
+                document.getElementById('errormsg').innerHTML = "Please enter a valid message";
+                message.focus();
+                return false;
+            } else {
+                document.getElementById('errormsg').innerHTML = "";
+            }
+
+            return true;
+        }
+    </script> -->
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="contactus.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('PD4GChaVToF_3akhC');
+        })();
+    </script>
+    <script>
+        function emailSend(e) {
+            e.preventDefault();
+            let fname = document.getElementById("fname").value;
+            let msg = document.getElementById("msg").value;
+            let email = document.getElementById("email").value;
+            var Params = {
+                from_name: fname,
+                email: email,
+                message: msg
+            };
+            // console.log(Params);
+            if (fname.length > 0 && msg.length > 0 && email.length > 0) {
+                emailjs.send('service_5xawb27', 'template_7iw2a8d', Params)
+                    .then(function (res) {
+                        console.log("Success", res.status);
+                    })
+                    alert("Message Successfully Sent");
+            }
+            else{
+                alert("Invalid Inputs");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+        <!-- <img src = "Images/icons8-avocado-100.png" width="65">  -->
+        <a class="logo">NEUTRAHEAL</a>
+
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <!-- <a href="lifestylediets.html">Lifestyle Diets</a> -->
+            <div class="dropdown">
+                <button class="dropbtn">Health Topics
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="basicnutrition.html">Basic Nutrition</a>
+                    <a href="Exercise&FItness.html">Exercise and Fitness</a>
+                    <a href="lifestage.html">Nutrition by Life Stage</a>
+                    <!-- <a href="#healthylivingandweight">Healthy Living and Weight</a> -->
+                </div>
+            </div>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="shopping-cart">
+
+            <div id="cart">
+
+            </div>
+
+            <div class="total"> Total : ₹3267/- </div>
+            <a href="#" class="btn">Checkout</a>
+        </div>
+
+        <form action="" class="login-form">
+            <h3>Login Now</h3>
+            <input type="E-mail" placeholder="Your E-mail" class="box">
+            <input type="Password" placeholder="Your password" class="box">
+            <p>Forgot Your Password <a href="#">Click Here</a></p>
+            <p>Don't Have An Account <a href="#">Create Now</a></p>
+            <input type="submit" value="Login Now" class="btn">
+        </form>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- Form starts -->
+
+    </head>
+    <h1>Contact form</h1>
+    <form name="myForm" action="/file.php" onsubmit="return validateForm()" method="post">
+        <table class="form-style">
+            <tr>
+                <td>
+                    <label>
+                        Your name <span class="required">*</span>
+                    </label>
+                </td>
+                <td>
+                    <input type="text" name="name" class="long" id="fname"/>
+                    <span class="error" id="errorname"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Your email address <span class="required">*</span>
+                    </label>
+                </td>
+                <td>
+                    <input type="email" name="email" class="long" id="email"/>
+                    <span class="error" id="erroremail"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Message <span class="required">*</span>
+                    </label>
+                </td>
+                <td>
+                    <textarea name="message" class="long field-textarea" id="msg"></textarea>
+                    <span class="error" id="errormsg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Send" onclick="emailSend(event)">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Form ends -->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3026431873773!2d77.09026581428122!3d28.620690291369304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afb8dbcfe1%3A0xaff19e718be2136b!2sMaharaja%20Surajmal%20Institute%20Of%20Technology!5e0!3m2!1sen!2sin!4v1652381638970!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- Footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3> NEUTRAHEAL <i class="fa fa-apple"></i> </h3>
+                <p>Healthy Eating in Real Life.</p>
+                <div class="share">
+                    <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                    <a href="https://twitter.com/harsh_r_verma" class="fab fa-twitter"></a>
+                    <a href="https://www.instagram.com/harsh.r.verma/" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#" class="links"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+                <a href="#" class="links"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+                <a href="#" class="links"> <i class="fas fa-envelope"></i> rharsh242@gmail.com </a>
+                <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Delhi, India - 110020 </a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+                <a href="aboutus.html" class="links"> <i class="fas fa-arrow-right"></i> About Us </a>
+                <!-- <a href="lifestylediets.html" class="links"> <i class="fas fa-arrow-right"></i> Lifestyle Diets </a> -->
+                <a href="#" class="links"> <i class="fas fa-arrow-right"></i> Health Topics </a>
+                <a href="contactus.html" class="links"> <i class="fas fa-arrow-right"></i> Contact Us </a>
+            </div>
+
+            <div class="box">
+                <h3>Newsletter</h3>
+                <p>Subscribe For Latest Updates</p>
+                <input type="E-mail" placeholder="Your E-mail" class="E-mail">
+                <input type="submit" value="Subscribe" class="btn">
+                <img src="Images/payment.png" class="payment-img" alt="">
+            </div>
+
+        </div>
+
+        <div class="credit"> Created By<span> HARSH VERMA </span> | All Rights Reserved </div>
+
+    </section>
+
+    <!-- Footer section ends -->
+
+</body>
+
+</html>
