@@ -32,20 +32,20 @@ body{
     background:#eee;
 }
 
-.contacttag{
+.heading {
     text-align: center;
-    font-size: 1.6rem;
-    /* border: 2px solid red; */
-    margin-top: 2rem;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
 }
 
-.abouttag span {
+.heading span {
     background: var(--orange);
     color: #fff;
     display: inline-block;
-    padding: .5rem 3rem;
+    padding: 0.5rem 3rem;
     clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
-    
 }
 
 /* css for header */
@@ -385,13 +385,16 @@ h1{
   iframe{
       display: block;
       width: 500px;
-      height: 500px;
+      height: 300px;
       margin: auto;
+      margin-bottom: 25px;
   }
 
 /* footer starts */
+
 .footer{
     background: #fff;
+    padding: 4rem;
 }
 
 .footer .box-container{

@@ -195,7 +195,7 @@
 
     <section class="FeaturedResources" id="FeaturedResources">
 
-        <h1 class="heading">Featured<span>Resources</span> </h1>
+        <h1 class="heading">Featured<span>Resource</span> </h1>
 
         <div class="box-container">
 
@@ -204,14 +204,6 @@
                 <h3>Historical Dietary Guidance Digital Collection</h3>
                 <p>Explore the history of dietary guidance and nutrition education from the 19th century to today.</p>
                 <a href="history.html" class="btn">View More</a>
-            </div>
-
-            <div class="box">
-                <img src="Images/dietplans.webp" alt="">
-                <h3>The 9 Best Diet Plans for Your Overall Health</h3>
-                <p>If you're unsure which of many diet plans is most effective for you, it can be hard to lose weight.
-                </p>
-                <a href="dietplans.html" class="btn">View More</a>
             </div>
 
         </div>
@@ -306,13 +298,13 @@
 		let boxes = [];
 		let cart = document.getElementById("cart");
 		function removeThings(){
-			console.log("hi");
+			// console.log("hi");
 			for(let i=0;i<boxes.length;i++)
 				boxes[i].remove();
 		}
         function addtocart(e) {
 			removeThings();
-
+            console.log(e)
             let obj = {
                 imgSrc : e.path[1].childNodes[1].currentSrc,
                 title : e.path[1].childNodes[3].innerText,
@@ -321,6 +313,7 @@
             
             arr.push(obj);
             arr = [...new Map(arr.map((item) => [item["title"], item])).values()];
+            console.log(arr);
 
             for(let item of arr){
                 let temp = `<i class="fas fa-trash" onclick=removeItem(event)></i>

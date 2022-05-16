@@ -495,7 +495,7 @@ section {
     background-color: #eee;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    font-size: 100%;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -509,6 +509,11 @@ section {
 
 .panel-container strong {
     line-height: 20px;
+    font-size: 10px;
+}
+
+.rating h3{
+    font-size: 15px;
 }
 
 .ratings-container {

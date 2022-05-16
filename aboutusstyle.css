@@ -336,15 +336,11 @@ body{
 .about-img img {
     display: block;
     height: auto;
-    max-width: 100%;
+    max-width: 250px;
     margin: auto;
     object-position: center;
     object-fit: cover;
     border: 0;
-}
-
-img {
-    vertical-align: middle;
 }
 
 .about-container {
@@ -372,6 +368,7 @@ img {
 
 .footer{
     background: #fff;
+    padding: 4rem;
 }
 
 .footer .box-container{

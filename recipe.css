@@ -32,22 +32,6 @@ body{
     background:#eee;
 }
 
-.abouttag{
-    text-align: center;
-    font-size: 1.6rem;
-    /* border: 2px solid red; */
-    margin-top: 2rem;
-}
-
-.abouttag span {
-    background: var(--orange);
-    color: #fff;
-    display: inline-block;
-    padding: .5rem 3rem;
-    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
-    
-}
-
 /* css for header */
 
 .header{
@@ -325,6 +309,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1.5em;
 }
 
+.page-header{
+    text-align: center;
+}
+
+.page-header span {
+    background: var(--orange);
+    color: black;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
 p {
     display: block;
     margin-block-start: 1em;
@@ -333,18 +329,6 @@ p {
     margin-inline-end: 0px;
     margin: 0 0 10px;
 }
-
-/* .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-img {
-    vertical-align: middle;
-}
-img {
-    border: 0;
-} */
 
 .recipe-img img {
     display: block;
@@ -403,6 +387,7 @@ img {
 
 .footer{
     background: #fff;
+    padding: 4rem;
 }
 
 .footer .box-container{
