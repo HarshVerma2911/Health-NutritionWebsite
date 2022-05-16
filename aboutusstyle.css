@@ -17,7 +17,6 @@
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
-    /* text-transform: capitalize; */
     transition: all .2s linear;
 }
 
@@ -30,21 +29,6 @@ html{
 
 body{
     background:#eee;
-}
-
-.abouttag{
-    text-align: center;
-    font-size: 1.6rem;
-    /* border: 2px solid red; */
-    margin-top: 2rem;
-}
-
-.abouttag span {
-    background: var(--orange);
-    color: #fff;
-    display: inline-block;
-    padding: .5rem 3rem;
-    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
 /* css for header */
@@ -311,6 +295,81 @@ body{
 
 /* header ends */
 
+/* body */
+
+.heading {
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+}
+
+.heading span {
+    background: var(--orange);
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.about-img img {
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-position: center;
+    object-fit: cover;
+}
+
+.about-text p {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+.about-text {
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+}
+
+.about-img img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+    object-position: center;
+    object-fit: cover;
+    border: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.about-container .container .about-text p {
+    font-size: .2rem;
+    line-height: 0.8;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+/* body ends */
+
+/* css for footer */
+
 .footer{
     background: #fff;
 }
@@ -372,7 +431,7 @@ body{
     color: #fff;
 }
 
-.footer .box-container .box .email{
+/* .footer .box-container .box .email{
     width: 100%;
     margin:.7rem 0;
     padding:1rem;
@@ -387,7 +446,7 @@ body{
     margin-top: 2rem;
     height: 3rem;
     display: block;
-}
+} */
 
 .footer .credit{
     text-align: center;
@@ -401,4 +460,77 @@ body{
 
 .footer .credit span{
     color:var(--orange);
+}
+
+/* footer ends */
+
+/* media parts */
+
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .search-form {
+        width: 90%;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active {
+        right: 2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img {
+        margin: 2rem auto;
+    }
+
 }
